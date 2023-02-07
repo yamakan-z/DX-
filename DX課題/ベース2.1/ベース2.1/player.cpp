@@ -7,7 +7,7 @@ constexpr auto y_Speed = 4.0f;
 
 Player::Player() {
 	//‰æ‘œ‚Ì“Ç‚İ‚İ
-	img = LoadGraph("image\\k_player.png");
+	img = LoadGraph("image\\player_a.png");
 
 	//‰ŠúˆÊ’u
 	pos.x = 20.0f;
