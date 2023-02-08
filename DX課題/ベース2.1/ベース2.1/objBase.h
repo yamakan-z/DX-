@@ -17,6 +17,8 @@ public:
 	bool FLAG{ true };//オブジェクト存在フラグ
 	bool draw_flag{ true };//描画のon/off
 
+	int hitcount;
+
 	virtual int Action(list<unique_ptr<Base>>& base) = 0;
 	virtual void Draw() = 0;
 	virtual Point Pos() = 0;//オブジェクトの位置取得
@@ -24,6 +26,8 @@ public:
 
 	// 位置
 	VECTOR size = { 0, 0 };
+
+	int enemy_counter = 0;//敵の合計数
 
 };
 

@@ -12,10 +12,16 @@ Player::Player() {
 	//初期位置
 	pos.x = 20.0f;
 	pos.y = WINDOW_HEIGHT - PLAYER_SIZE;
+
 }
 
 int Player::Action(list<unique_ptr<Base>>& base)
 {
+
+	unsigned int Cr;
+
+	//文字カラー設定
+	Cr = GetColor(255, 255, 255);
 	
 	int mouse = GetMouseInput();
 
@@ -108,18 +114,28 @@ int Player::Action(list<unique_ptr<Base>>& base)
 
 	//判定処理
 	Point enemy_pos{ 0,0 };
-
+	
+	
 	for (auto i = base.begin(); i != base.end(); i++)
 	{
 		//判定する敵の座標取得
 		if ((*i)->ID == ENEMY)
 		{
 			enemy_pos = (*i)->Pos();
-			if (HitCheck_box(pos.x + 32, pos.y + 32, enemy_pos.x, enemy_pos.y, IMGSIZE32, IMGSIZE32, IMGSIZE64, IMGSIZE64))
+
+			if (HitCheck_box(pos.x, pos.y, enemy_pos.x, enemy_pos.y, IMGSIZE32, IMGSIZE32, IMGSIZE64, IMGSIZE64))
 			{
+
+				(*i)->hitcount++;
+
+				if ((*i)->hitcount == 3)
+				{
+					enemy_counter++;
+				}
 				//pos.x = (WINDOW_WIDTH - PLAYER_SIZE) * 2 - pos.x;
 				spd.x = -spd.x;
 				spd.y = -spd.y;
+				
 			}
 		}
 	}
@@ -144,6 +160,7 @@ int Player::Action(list<unique_ptr<Base>>& base)
 
 void Player::Draw()
 {
+	DrawFormatStringF(pos.x, pos.y - 90, GetColor(255, 255, 255), "spd.x:%d", enemy_counter);//プレイヤーに当たった回数表示
 	DrawGraphF(pos.x, pos.y, img, true);
 }
 

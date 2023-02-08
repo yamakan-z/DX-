@@ -2,6 +2,7 @@
 #include "objBase.h"
 #include "main.h"
 
+
 //playerクラス
 class Player :public Base {
 private:
@@ -60,4 +61,6 @@ public:
 	void Draw();
 
 	Point Pos() { return pos; };//位置を返す
+
+	int count;//プレイヤーに当たった回数
 };
