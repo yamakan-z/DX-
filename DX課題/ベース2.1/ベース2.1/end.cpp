@@ -8,6 +8,7 @@
 //初期化
 void CEnd::Init(list<unique_ptr<Base>>& _base) {
 	_base.swap(base);
+	img = LoadGraph("image\\clear.png");
 }
 
 //更新処理
@@ -29,6 +30,6 @@ void CEnd::Draw() {
 	DrawGraphF(0.0f, 0.0f, img, true);
 
 	DrawFormatStringF(0, 0, GetColor(255, 255, 255), "エンドシーン\nAキーでタイトルへ");
-	for (auto i = base.begin(); i != base.end(); i++)
-		(*i)->Draw();
+	/*for (auto i = base.begin(); i != base.end(); i++)
+		(*i)->Draw();*/
 }

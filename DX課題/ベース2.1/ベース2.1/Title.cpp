@@ -25,5 +25,5 @@ int CTitle::Update() {
 void CTitle::Draw() {
 	DrawGraphF(0.0f, 0.0f, img, true);
 
-	DrawFormatStringF(0, 0, GetColor(255, 255, 255), "スペースキーでタイトルへ");
+	//DrawFormatStringF(0, 0, GetColor(255, 255, 255), "スペースキーでタイトルへ");
 }

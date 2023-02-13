@@ -10,7 +10,7 @@ Player::Player() {
 	img = LoadGraph("image\\player_a.png");
 
 	//初期位置
-	pos.x = 20.0f;
+	pos.x = WINDOW_WIDTH / 2;
 	pos.y = WINDOW_HEIGHT - PLAYER_SIZE;
 
 }
@@ -132,36 +132,64 @@ int Player::Action(list<unique_ptr<Base>>& base)
 				{
 					enemy_counter++;//倒すと敵カウンター+1
 				}
-				//pos.x = (WINDOW_WIDTH - PLAYER_SIZE) * 2 - pos.x;
+				
 				spd.x = -spd.x;
 				spd.y = -spd.y;
 				
 			}
 		}
-	}
-	
-	//for (auto i = base.begin(); i != base.end(); i++)
-	//{
-	//	//判定する敵の座標取得
-	//	if ((*i)->ID == ENEMY)
-	//	{
-	//		enemy_pos = (*i)->Pos();
-	//		if (HitCheck_Circle(pos.x, pos.y, enemy_pos.x, enemy_pos.y, IMGSIZE32, IMGSIZE64))
-	//		{
-	//			//pos.y = -pos.y;
-	//			spd.x = -spd.x;
-	//			spd.y = -spd.y;
-	//		}
-	//	}
-	//}
 
+		if ((*i)->ID == ONEENEMY)
+		{
+			enemy_pos = (*i)->Pos();
+
+			if (HitCheck_box(pos.x, pos.y, enemy_pos.x, enemy_pos.y, IMGSIZE32, IMGSIZE32, IMGSIZE64, IMGSIZE64))
+			{
+
+				(*i)->hitcount++;
+
+				if ((*i)->hitcount == 1)
+				{
+					enemy_counter++;//倒すと敵カウンター+1
+				}
+				
+				spd.x = -spd.x;
+				spd.y = -spd.y;
+
+			}
+		}
+
+		if ((*i)->ID == TWOENEMY)
+		{
+			enemy_pos = (*i)->Pos();
+
+			if (HitCheck_box(pos.x, pos.y, enemy_pos.x, enemy_pos.y, IMGSIZE32, IMGSIZE32, IMGSIZE64, IMGSIZE64))
+			{
+
+				(*i)->hitcount++;
+
+				if ((*i)->hitcount == 2)
+				{
+					enemy_counter++;//倒すと敵カウンター+1
+				}
+				
+				spd.x = -spd.x;
+				spd.y = -spd.y;
+
+			}
+		}
+	}
+
+	
 	return 0;
 }
 
 void Player::Draw()
 {
-	DrawFormatStringF(pos.x, pos.y - 90, GetColor(255, 255, 255), "spd.x:%d", enemy_counter);//プレイヤーに当たった回数表示
+	//DrawFormatStringF(pos.x, pos.y - 90, GetColor(255, 255, 255), "spd.x:%d", enemy_counter);//プレイヤーに当たった回数表示
+	
 	DrawGraphF(pos.x, pos.y, img, true);
+	
 }
 
 

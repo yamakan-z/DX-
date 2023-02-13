@@ -38,4 +38,6 @@ enum
 {
 	PLAYER,//ƒvƒŒƒCƒ„[
 	ENEMY,//“G
+	ONEENEMY,//ˆê”­‚ÅŽ€‚Ê“G
+	TWOENEMY,//2”­‚ÅŽ€‚Ê“G
 };

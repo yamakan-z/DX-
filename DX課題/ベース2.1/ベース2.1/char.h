@@ -64,3 +64,37 @@ public:
 
 	int count;//プレイヤーに当たった回数
 };
+
+class OneEnemy :public Base
+{
+private:
+	Point pos{ 0,0 };
+	Vector vec{ 0,0 };
+public:
+	OneEnemy(float _x, float _y);//コンストラクタ
+
+	int Action(list<unique_ptr<Base>>& base);
+
+	void Draw();
+
+	Point Pos() { return pos; };//位置を返す
+
+	int count;//プレイヤーに当たった回数
+};
+
+class TwoEnemy :public Base
+{
+private:
+	Point pos{ 0,0 };
+	Vector vec{ 0,0 };
+public:
+	TwoEnemy(float _x, float _y);//コンストラクタ
+
+	int Action(list<unique_ptr<Base>>& base);
+
+	void Draw();
+
+	Point Pos() { return pos; };//位置を返す
+
+	int count;//プレイヤーに当たった回数
+};

@@ -1,4 +1,8 @@
 ﻿  Game.cpp
-C:\Users\GA3\Desktop\DXkadai\DX課題\ベース2.1\ベース2.1\Game.cpp(36,70): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\GA3\Desktop\DXkadai\DX課題\ベース2.1\ベース2.1\Game.cpp(36,53): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
-  ベース2.1.vcxproj -> C:\Users\GA3\Desktop\DXkadai\DX課題\ベース2.1\x64\Debug\ベース2.1.exe
+C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\ベース2.1\Game.cpp(40,70): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\ベース2.1\Game.cpp(40,53): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\ベース2.1\Game.cpp(43,73): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\ベース2.1\Game.cpp(43,56): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\ベース2.1\Game.cpp(46,73): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\ベース2.1\Game.cpp(46,56): warning C4244: '引数': 'int' から 'float' への変換です。データが失われる可能性があります。
+  ベース2.1.vcxproj -> C:\Users\81909\Desktop\DXDX\DX課題\ベース2.1\x64\Debug\ベース2.1.exe

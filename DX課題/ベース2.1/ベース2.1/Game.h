@@ -11,6 +11,10 @@ public:
 	CGame(CManager* pManager) :CScene(pManager) { Init(); };
 	~CGame() {};
 
+	int e_count;//“GŒ‚”j”
+
+	int img{ -1 };	//‰æ‘œƒnƒ“ƒhƒ‹
+
 	void Init();//‰Šú‰»
 	int Update();//XVˆ—
 	void Draw();//•`‰æˆ—
