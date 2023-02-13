@@ -130,7 +130,7 @@ int Player::Action(list<unique_ptr<Base>>& base)
 
 				if ((*i)->hitcount == 3)
 				{
-					enemy_counter++;
+					enemy_counter++;//倒すと敵カウンター+1
 				}
 				//pos.x = (WINDOW_WIDTH - PLAYER_SIZE) * 2 - pos.x;
 				spd.x = -spd.x;
